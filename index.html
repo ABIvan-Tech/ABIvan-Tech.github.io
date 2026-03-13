@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alex Ivantsov | Portfolio</title>
+  <meta name="description" content="Portfolio of Alex Ivantsov: AI-first product engineering, Android development, workflow automation, public GitHub projects and selected systems work.">
+  <meta name="keywords" content="Alex Ivantsov, Aleksei Ivantsov, AI engineer, AI-first engineer, AI-first product engineering, AI developer, AI portfolio, machine learning portfolio, computer vision engineer, agentic workflows, AI workflows, GitHub portfolio, Android developer, Kotlin developer, Jetpack Compose, Kotlin Multiplatform, KMP developer, Koin, Ktor, workflow automation, product engineering, software engineer portfolio, public GitHub projects, AIFace, copilot agentic workflows">
+  <meta name="author" content="Alex Ivantsov">
+  <meta property="og:title" content="Alex Ivantsov | AI-First Product Engineering Portfolio">
+  <meta property="og:description" content="AI-first portfolio of Alex Ivantsov featuring public GitHub AI projects, Android product development, workflow automation and engineering depth.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Alex Ivantsov | AI-First Product Engineering Portfolio">
+  <meta name="twitter:description" content="AI-first portfolio with Android delivery, agentic workflows, public GitHub projects and engineering depth.">
+  <style>
+    :root {
+      --bg: #06080f;
+      --text: #f3f6fb;
+      --muted: #95a2ba;
+      --panel: rgba(12, 14, 21, 0.84);
+      --panel-soft: rgba(15, 20, 30, 0.72);
+      --line: rgba(255, 255, 255, 0.08);
+      --line-strong: rgba(169, 213, 255, 0.18);
+      --accent: #a9d5ff;
+      --accent-2: #6f96ff;
+      --success: #dbeaff;
+      --shadow: 0 30px 80px rgba(0, 0, 0, 0.36);
+      --radius: 30px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Avenir Next", "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% 12%, rgba(63, 95, 171, 0.24), transparent 24%),
+        radial-gradient(circle at 84% 18%, rgba(54, 86, 131, 0.22), transparent 22%),
+        linear-gradient(180deg, #020307 0%, #080b13 50%, #020307 100%);
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .field {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        radial-gradient(2px 2px at 14% 24%, rgba(255,255,255,0.72), transparent 60%),
+        radial-gradient(2px 2px at 42% 18%, rgba(255,255,255,0.74), transparent 60%),
+        radial-gradient(1.5px 1.5px at 63% 32%, rgba(169,213,255,0.74), transparent 60%),
+        radial-gradient(2px 2px at 78% 66%, rgba(255,255,255,0.7), transparent 60%),
+        radial-gradient(1.8px 1.8px at 90% 20%, rgba(147,196,255,0.78), transparent 60%);
+      opacity: 0.42;
+      z-index: 0;
+    }
+
+    .wrap {
+      position: relative;
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 28px 24px 84px;
+      z-index: 1;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 22px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.78rem;
+    }
+
+    .topbar nav {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 22px;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero {
+      min-height: 720px;
+      padding: 38px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background:
+        radial-gradient(circle at top right, rgba(89, 124, 255, 0.18), transparent 32%),
+        linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.01));
+    }
+
+    .eyebrow,
+    .section-tag,
+    .project small {
+      color: var(--accent);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 780px;
+      font-size: clamp(3rem, 6vw, 6.2rem);
+      line-height: 0.94;
+      letter-spacing: -0.055em;
+    }
+
+    .hero p,
+    .side-panel p,
+    .project p,
+    .summary p,
+    .skill-list li,
+    .career li,
+    .contacts a,
+    .project ul,
+    .footer-note {
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .hero p {
+      max-width: 730px;
+      font-size: 1.04rem;
+      margin-top: 24px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.04);
+      transition: 160ms ease;
+    }
+
+    .btn:hover {
+      background: rgba(169,213,255,0.1);
+      border-color: rgba(169,213,255,0.22);
+      transform: translateY(-1px);
+    }
+
+    .btn.primary {
+      background: linear-gradient(180deg, rgba(169,213,255,0.22), rgba(111,150,255,0.1));
+      border-color: rgba(169,213,255,0.28);
+      color: var(--success);
+    }
+
+    .orbits {
+      position: relative;
+      margin-top: 34px;
+      min-height: 240px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      overflow: hidden;
+    }
+
+    .ring {
+      position: absolute;
+      border: 1px solid rgba(169, 213, 255, 0.18);
+      border-radius: 50%;
+      inset: 50% auto auto 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .ring.r1 { width: 160px; height: 160px; }
+    .ring.r2 { width: 260px; height: 260px; }
+    .ring.r3 { width: 360px; height: 360px; }
+
+    .core,
+    .satellite {
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    .core {
+      left: 50%;
+      top: 50%;
+      width: 24px;
+      height: 24px;
+      transform: translate(-50%, -50%);
+      background:
+        radial-gradient(circle at 35% 35%, #fff4cc 0%, #ffd66b 34%, #ffb347 62%, #ff9b2f 100%);
+      box-shadow:
+        0 0 16px rgba(255, 196, 85, 0.62),
+        0 0 32px rgba(255, 179, 71, 0.34),
+        0 0 58px rgba(255, 153, 47, 0.16);
+      z-index: 2;
+    }
+
+    .core::before {
+      content: "";
+      position: absolute;
+      inset: -14px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 196, 85, 0.32), rgba(255, 179, 71, 0.08) 55%, transparent 72%);
+      opacity: 0.78;
+    }
+
+    .orbit {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      will-change: transform;
+    }
+
+    .orbit-1 {
+      width: 160px;
+      height: 160px;
+      animation-name: orbitClockwise;
+      animation-duration: 16s;
+    }
+
+    .orbit-2 {
+      width: 260px;
+      height: 260px;
+      animation-name: orbitCounterClockwise;
+      animation-duration: 24s;
+    }
+
+    .orbit-3 {
+      width: 360px;
+      height: 360px;
+      animation-name: orbitClockwise;
+      animation-duration: 34s;
+    }
+
+    .satellite {
+      width: 14px;
+      height: 14px;
+      background: radial-gradient(circle at 35% 35%, #dff0ff 0%, #9ac3f0 68%, #6e97c4 100%);
+      top: 50%;
+      right: -7px;
+      transform: translateY(-50%);
+      box-shadow:
+        0 0 10px rgba(154, 195, 240, 0.34);
+    }
+
+    .satellite.s2 {
+      width: 20px;
+      height: 20px;
+      right: -9px;
+      background: radial-gradient(circle at 35% 35%, #eef7ff 0%, #b4d7ff 64%, #7ea8d5 100%);
+    }
+
+    .satellite.s3 {
+      width: 28px;
+      height: 28px;
+      right: -11px;
+      background: radial-gradient(circle at 35% 35%, #dcecff 0%, #8fb8e8 66%, #648ab8 100%);
+    }
+
+    @keyframes orbitClockwise {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    @keyframes orbitCounterClockwise {
+      from { transform: translate(-50%, -50%) rotate(360deg); }
+      to { transform: translate(-50%, -50%) rotate(0deg); }
+    }
+
+    .hero-footer {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .metric {
+      padding: 16px 18px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      transition: transform 220ms ease, border-color 220ms ease, background 220ms ease;
+    }
+
+    .metric:hover {
+      transform: translateY(-4px);
+      border-color: rgba(169,213,255,0.16);
+      background: rgba(255,255,255,0.05);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .side {
+      display: grid;
+      gap: 22px;
+    }
+
+    .side-panel,
+    .summary {
+      padding: 28px;
+      background: var(--panel-soft);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .side-panel h2,
+    .summary h2,
+    .projects-title,
+    .career h2 {
+      margin: 0 0 14px;
+      font-size: 1.35rem;
+      letter-spacing: -0.03em;
+    }
+
+    .stack {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .stack div {
+      display: grid;
+      grid-template-columns: 140px minmax(0, 1fr);
+      align-items: start;
+      column-gap: 20px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 12px;
+    }
+
+    .stack span:first-child,
+    .career strong {
+      color: var(--text);
+      font-weight: 600;
+      line-height: 1.45;
+    }
+
+    .stack span:last-child {
+      min-width: 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .summary-grid {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 22px;
+    }
+
+    .skill-list,
+    .career ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .projects-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 18px;
+      margin: 56px 0 18px;
+    }
+
+    .projects-header p {
+      margin: 0;
+      max-width: 720px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .project {
+      padding: 24px;
+      min-height: 100%;
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    .project:hover {
+      transform: translateY(-4px);
+      border-color: rgba(169,213,255,0.16);
+      background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.02));
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
+    }
+
+    .project-media {
+      position: relative;
+      height: 220px;
+      border-radius: 20px;
+      margin: -4px 0 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.06);
+      background:
+        linear-gradient(180deg, rgba(6, 9, 18, 0.12), rgba(6, 9, 18, 0.5)),
+        var(--bg-image, linear-gradient(135deg, rgba(169,213,255,0.12), rgba(111,150,255,0.08)));
+      background-size: cover;
+      background-position: center top;
+      box-shadow: inset 0 -50px 70px rgba(0, 0, 0, 0.38);
+    }
+
+    .project-media::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.05), transparent 30%),
+        linear-gradient(0deg, rgba(4, 7, 13, 0.72), transparent 42%);
+    }
+
+    .project-media.shot {
+      background-color: rgba(9, 14, 26, 0.9);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    .project-media.shot::before {
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.05), transparent 24%),
+        radial-gradient(circle at 50% 20%, rgba(169,213,255,0.08), transparent 40%),
+        linear-gradient(0deg, rgba(4, 7, 13, 0.72), transparent 42%);
+    }
+
+    .project-media.shot .frame {
+      position: absolute;
+      inset: 12px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.01));
+      pointer-events: none;
+    }
+
+    .project-media.poster {
+      display: flex;
+      align-items: flex-end;
+      padding: 18px 18px 22px;
+      background:
+        radial-gradient(circle at 22% 24%, rgba(105, 140, 255, 0.3), transparent 28%),
+        radial-gradient(circle at 80% 76%, rgba(86, 220, 255, 0.14), transparent 26%),
+        linear-gradient(135deg, rgba(11, 18, 34, 0.96), rgba(10, 15, 28, 0.92));
+      overflow: hidden;
+    }
+
+    .project-media.poster::before {
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.05), transparent 26%),
+        radial-gradient(circle at 70% 26%, rgba(169,213,255,0.08), transparent 24%),
+        linear-gradient(0deg, rgba(4, 7, 13, 0.62), transparent 42%);
+    }
+
+    .project-media.poster .poster-grid {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 32px 32px;
+      mask-image: linear-gradient(180deg, rgba(255,255,255,0.28), transparent 80%);
+      opacity: 0.4;
+    }
+
+    .project-media.poster .poster-chip {
+      position: absolute;
+      left: 18px;
+      bottom: 18px;
+      z-index: 2;
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.05);
+      color: #e8f2ff;
+      font-size: 0.84rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .project-media.poster .poster-orb {
+      position: absolute;
+      right: 20px;
+      top: 28px;
+      width: 74px;
+      height: 74px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #dceaff 0%, #8cb7ff 55%, #456cff 100%);
+      box-shadow: 0 0 18px rgba(111, 150, 255, 0.24);
+      opacity: 0.9;
+    }
+
+    .project-media.poster.workflow {
+      background:
+        radial-gradient(circle at 72% 26%, rgba(120, 185, 255, 0.24), transparent 20%),
+        radial-gradient(circle at 26% 74%, rgba(77, 112, 255, 0.16), transparent 28%),
+        linear-gradient(135deg, rgba(10, 17, 33, 0.96), rgba(9, 14, 26, 0.92));
+    }
+
+    .project-media.poster.workflow .flow-line {
+      position: absolute;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.08), rgba(169,213,255,0.66), rgba(255,255,255,0.08));
+      box-shadow: none;
+    }
+
+    .project-media.poster.workflow .flow-line.one {
+      left: 24px;
+      right: 92px;
+      top: 88px;
+    }
+
+    .project-media.poster.workflow .flow-line.two {
+      left: 64px;
+      right: 48px;
+      top: 128px;
+    }
+
+    .project-media.poster.workflow .flow-node {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #eef6ff 0%, #9bc2ff 65%, #557fff 100%);
+      box-shadow: 0 0 8px rgba(111,150,255,0.22);
+    }
+
+    .project-media.poster.workflow .flow-node.a { left: 24px; top: 82px; }
+    .project-media.poster.workflow .flow-node.b { left: 132px; top: 82px; }
+    .project-media.poster.workflow .flow-node.c { right: 92px; top: 82px; }
+    .project-media.poster.workflow .flow-node.d { left: 64px; top: 122px; }
+    .project-media.poster.workflow .flow-node.e { right: 48px; top: 122px; }
+
+    .project-media.poster.face {
+      background:
+        linear-gradient(180deg, #ececec 0 28%, #e1e4e8 28% 100%);
+    }
+
+    .project-media.poster.face::before {
+      background: none;
+    }
+
+    .project-media.poster.face .poster-grid {
+      display: none;
+    }
+
+    .project-media.poster.face .poster-chip {
+      left: auto;
+      right: 18px;
+      bottom: auto;
+      top: 18px;
+      background: rgba(255,255,255,0.88);
+      border-color: rgba(0,0,0,0.06);
+      color: #1d2430;
+    }
+
+    .project-media.poster.face .face-card {
+      position: absolute;
+      left: 28px;
+      right: 28px;
+      top: 78px;
+      bottom: 28px;
+      border-radius: 26px;
+      background: #dfe4e8;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.03);
+    }
+
+    .project-media.poster.face .face-avatar {
+      position: absolute;
+      left: 50%;
+      top: 58%;
+      width: 220px;
+      height: 220px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: #f2cd9f;
+    }
+
+    .project-media.poster.face .eye,
+    .project-media.poster.face .brow {
+      position: absolute;
+      background: #000;
+    }
+
+    .project-media.poster.face .eye {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      top: 76px;
+    }
+
+    .project-media.poster.face .eye.left { left: 64px; }
+    .project-media.poster.face .eye.right { right: 64px; }
+
+    .project-media.poster.face .brow {
+      width: 54px;
+      height: 10px;
+      border-radius: 999px;
+      top: 54px;
+    }
+
+    .project-media.poster.face .brow.left { left: 54px; }
+    .project-media.poster.face .brow.right { right: 54px; }
+
+    .project-media.poster.face .smile {
+      position: absolute;
+      left: 50%;
+      bottom: 42px;
+      width: 116px;
+      height: 54px;
+      transform: translateX(-50%);
+      border: 8px solid #000;
+      border-top: 0;
+      border-radius: 0 0 90px 90px;
+      background: transparent;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+
+    .project h3 {
+      margin: 10px 0 12px;
+      font-size: 1.55rem;
+      letter-spacing: -0.03em;
+    }
+
+    .project ul {
+      margin: 16px 0 0;
+      padding-left: 18px;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .project-links a {
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      color: var(--success);
+      font-size: 0.92rem;
+    }
+
+    .footer-note {
+      margin-top: 32px;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 1180px) {
+      .layout,
+      .summary-grid,
+      .project-grid,
+      .hero-footer {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+    }
+
+    @media (max-width: 720px) {
+      .wrap {
+        padding: 20px 16px 64px;
+      }
+
+      .hero,
+      .side-panel,
+      .summary,
+      .project {
+        padding: 22px;
+      }
+
+      .project-media {
+        height: 200px;
+      }
+
+      .topbar,
+      .projects-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .stack div {
+        grid-template-columns: 1fr;
+        row-gap: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="field"></div>
+  <div class="wrap">
+    <header class="topbar">
+      <div>abIvan.tech</div>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#summary">Summary</a>
+        <a href="#contacts">Contacts</a>
+      </nav>
+    </header>
+
+    <section class="layout">
+      <article class="panel hero">
+        <div>
+          <div class="eyebrow">Portfolio for Alex Ivantsov</div>
+          <h1>AI-first product engineering with Android and systems depth.</h1>
+          <p>
+            I build software with an AI-first mindset across mobile products, developer workflows and domain-heavy systems.
+            The portfolio combines modern Android delivery, public AI-oriented GitHub work, workflow automation,
+            product engineering and a strong foundation in complex technical environments.
+          </p>
+          <div class="cta-row" id="contacts">
+            <a class="btn primary" href="https://github.com/ABIvan-Tech/" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="btn" href="https://www.linkedin.com/in/alekseiivantsov/" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
+          <div class="orbits" aria-hidden="true">
+            <div class="ring r1"></div>
+            <div class="ring r2"></div>
+            <div class="ring r3"></div>
+            <div class="core"></div>
+            <div class="orbit orbit-1">
+              <div class="satellite s1"></div>
+            </div>
+            <div class="orbit orbit-2">
+              <div class="satellite s2"></div>
+            </div>
+            <div class="orbit orbit-3">
+              <div class="satellite s3"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-footer">
+          <div class="metric">
+            <strong>AI</strong>
+            <span>AI-first product thinking, public GitHub projects, agentic workflows and practical experimentation</span>
+          </div>
+          <div class="metric">
+            <strong>Android</strong>
+            <span>product apps in healthcare, ride sharing, utilities, social aggregation and media</span>
+          </div>
+          <div class="metric">
+            <strong>16+</strong>
+            <span>years in telecom engineering, optimisation, planning and performance analysis</span>
+          </div>
+        </div>
+      </article>
+
+      <aside class="side">
+        <section class="side-panel">
+          <h2>Core Narrative</h2>
+          <p>
+            This portfolio positions AI-first engineering at the front: public AI experiments, agentic workflows,
+            automation, Android product delivery and the ability to work inside complex technical systems.
+          </p>
+          <div class="stack">
+            <div><span>AI</span><span>AI-first product thinking, agentic workflows, computer vision, AI-assisted engineering</span></div>
+            <div><span>Android</span><span>Kotlin, Java, KMP, MVVM, MVI, Jetpack, Compose, Hilt, Dagger 2, Koin</span></div>
+            <div><span>Data & API</span><span>Retrofit, OkHttp, RxJava, Coroutines, Firebase, Room, SQLite, Ktor</span></div>
+            <div><span>Automation</span><span>Python, Java, SQL, VBA, CLI workflows, analytics</span></div>
+            <div><span>Legacy</span><span>C/C++, MFC, GDI+, hardware-oriented and research applications</span></div>
+            <div><span>Telecom</span><span>GSM, WCDMA, LTE-A, 5G, VoLTE, IoT, optimisation and planning</span></div>
+          </div>
+        </section>
+
+        <section class="side-panel">
+          <h2>Selected Roles</h2>
+          <p>
+            AI-first product engineer, Android Developer, QA, Team Leader and Software Developer with experience
+            across product delivery, refactoring, feature ownership, automation and operational tooling.
+          </p>
+        </section>
+
+        <section class="side-panel contacts">
+          <h2>Contact</h2>
+          <p>Open to AI-first product engineering, Android development, workflow automation and selected consulting work through professional channels.</p>
+          <a href="https://github.com/ABIvan-Tech/" target="_blank" rel="noreferrer">github.com/ABIvan-Tech</a><br>
+          <a href="https://www.linkedin.com/in/alekseiivantsov/" target="_blank" rel="noreferrer">linkedin.com/in/alekseiivantsov</a>
+        </section>
+      </aside>
+    </section>
+
+    <section class="summary-grid" id="summary">
+      <article class="summary">
+        <div class="section-tag">Technical Summary</div>
+        <h2>Stack and tools</h2>
+        <ul class="skill-list">
+          <li>AI-first engineering: public GitHub AI projects, agentic workflows, AI-assisted development, computer vision and automation-oriented product thinking</li>
+          <li>Languages: Kotlin, Java, Python, C/C++, VBA for Excel, SQL, HTML, CSS, JSON, XML</li>
+          <li>Mobile: Android SDK, Kotlin Multiplatform (KMP), MVVM, MVI, Jetpack, Compose, Hilt, Dagger 2, Koin, MotionLayout, Firebase, Room, Coil, Glide</li>
+          <li>Networking and data: Retrofit, OkHttp, Ktor, RxJava, Coroutines, REST API integration, SQLite, MS SQL, Oracle basics</li>
+          <li>Dev and ops: Git, Debian, Apache NiFi, CLI workflows, geospatial analytics via Kepler.gl</li>
+          <li>Desktop and systems: MFC, GDI+, client/server architecture, hardware debugging, legacy migration from Fortran and Assembler</li>
+        </ul>
+      </article>
+
+      <article class="summary career">
+        <div class="section-tag">Background</div>
+        <h2>Education and domain experience</h2>
+        <ul>
+          <li><strong>Siberian Federal University</strong> — Electrical Engineering and Telecommunications</li>
+          <li><strong>Recent AI certifications (2026)</strong> — Anthropic Academy: Introduction to agent skills</li>
+          <li><strong>Recent AI certifications (2026)</strong> — Anthropic Education: AI Fluency: Framework &amp; Foundations</li>
+          <li><strong>Recent AI certifications (2026)</strong> — NGI Academy: AI Literacy based on Anthropic materials</li>
+          <li><strong>Recent AI certifications (2026)</strong> — Anthropic: Claude Code in Action</li>
+          <li><strong>Earlier study</strong> — Udacity Android courses, DataCamp, Microsoft Python and AI certificates</li>
+          <li><strong>Telecom domain</strong> — consultancy, project management, strategic planning, network evolution and performance analysis</li>
+          <li><strong>Languages</strong> — Russian (native), English (B1), French (A1)</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="projects">
+      <div class="projects-header">
+        <div>
+          <div class="section-tag">Selected Projects</div>
+          <h2 class="projects-title">Selected work across AI, Android and complex software systems</h2>
+        </div>
+        <p>
+          A curated mix of public AI work, Android product delivery and domain-heavy engineering projects that reflects both current focus and long-term technical depth.
+        </p>
+      </div>
+
+      <div class="project-grid">
+        <article class="panel project">
+          <small>AI / Emotions</small>
+          <div class="project-media poster face">
+            <div class="poster-chip">AI Emotions</div>
+            <div class="face-card">
+              <div class="face-avatar">
+                <div class="brow left"></div>
+                <div class="brow right"></div>
+                <div class="eye left"></div>
+                <div class="eye right"></div>
+                <div class="smile"></div>
+              </div>
+            </div>
+          </div>
+          <h3>AIFace</h3>
+          <p>A public project in the field of AI-emotions, focused on real-time interaction, presented as a visual product on GitHub.</p>
+          <ul>
+            <li>Public repository under the ABIvan-Tech GitHub profile</li>
+            <li>Strengthens the current AI-facing part of the portfolio with a concrete visual concept</li>
+            <li>Useful as a public engineering artifact alongside commercial delivery work</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://github.com/ABIvan-Tech/AIFace" target="_blank" rel="noreferrer">GitHub Repo</a>
+          </div>
+        </article>
+
+        <article class="panel project">
+          <small>AI Tooling / Workflows</small>
+          <div class="project-media poster workflow">
+            <div class="poster-grid"></div>
+            <div class="flow-line one"></div>
+            <div class="flow-line two"></div>
+            <div class="flow-node a"></div>
+            <div class="flow-node b"></div>
+            <div class="flow-node c"></div>
+            <div class="flow-node d"></div>
+            <div class="flow-node e"></div>
+            <div class="poster-chip">Agentic Workflows</div>
+          </div>
+          <h3>Copilot Agentic Workflows</h3>
+          <p>Production-oriented GitHub Copilot and VS Code agent workflow built around a Hive-Mind model for orchestration, planning, memory and multi-agent execution.</p>
+          <ul>
+            <li>Shared project memory, semantic loading and completion-gate knowledge preservation</li>
+            <li>Orchestrator, planner, coder, reviewer, debugger and multi-reviewer agent contracts</li>
+            <li>Focus on practical agentic workflows, developer productivity and production-ready AI collaboration</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://github.com/ABIvan-Tech/copilot-agentic-workflows" target="_blank" rel="noreferrer">GitHub Repo</a>
+          </div>
+        </article>
+
+        <article class="panel project">
+          <small>Streaming / Android TV</small>
+          <div class="project-media shot" style="--bg-image: url('./assets/odt-images/10000000000002D0000005A0E63ED6AE.png');"><div class="frame"></div></div>
+          <h3>TV d'Orange</h3>
+          <p>Android TV streaming product focused on film and media consumption, representing the modern consumer side of the portfolio.</p>
+          <ul>
+            <li>Kotlin, Java, Jetpack Compose, Coroutines and Multiplatform</li>
+            <li>Android TV delivery with media-first UI and large-screen interaction patterns</li>
+            <li>Strong example of recent product work beyond classic mobile phone apps</li>
+          </ul>
+        </article>
+
+        <article class="panel project">
+          <small>Finance / Android</small>
+          <div class="project-media shot" style="--bg-image: url('./assets/odt-images/100000010000018A000003181B2C5162.png');"><div class="frame"></div></div>
+          <h3>Top Choice Financial App</h3>
+          <p>Financial mobile application built with a current Android stack and a cleaner, more product-oriented UI layer.</p>
+          <ul>
+            <li>Kotlin, Jetpack Compose and Coroutines</li>
+            <li>Modern UI implementation with Compose-driven screens</li>
+            <li>Shows progression from classic Android architecture to newer declarative delivery</li>
+          </ul>
+        </article>
+
+        <article class="panel project">
+          <small>IoT / Android / iOS</small>
+          <div class="project-media shot" style="--bg-image: url('./assets/odt-images/10000001000001A9000003505C2BA584.png');"><div class="frame"></div></div>
+          <h3>Intelligent Tire</h3>
+          <p>Connected mobile project combining Android development with device communication and location-aware workflows.</p>
+          <ul>
+            <li>Kotlin and Coroutines</li>
+            <li>Bluetooth and GPS integration</li>
+            <li>Fits the device-oriented part of the portfolio</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=com.cerebrum.android.st&amp;hl=fi" target="_blank" rel="noreferrer">Google Play</a>
+          </div>
+        </article>
+
+        <article class="panel project">
+          <small>EV Charging / Android / iOS</small>
+          <div class="project-media shot" style="--bg-image: url('./assets/odt-images/100000010000017F00000334968DACAB.png');"><div class="frame"></div></div>
+          <h3>Xeal EV Charging</h3>
+          <p>Android application in the electric vehicle charging space with connectivity-heavy implementation.</p>
+          <ul>
+            <li>Kotlin and Coroutines</li>
+            <li>Bluetooth, NFC, Wi-Fi and GPS integration</li>
+            <li>Strong domain example for hardware-adjacent mobile software</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=com.xealenergy.android.xealnfc" target="_blank" rel="noreferrer">Google Play</a>
+          </div>
+        </article>
+
+        <article class="panel project">
+          <small>Wellness / Android / iOS</small>
+          <div class="project-media shot" style="--bg-image: url('./assets/odt-images/1000000100000438000009606FAB676D.png');"><div class="frame"></div></div>
+          <h3>Affirmations 365 Days</h3>
+          <p>Compose-based KMP mobile product in the wellness space, reinforcing the recent modern Android part of the portfolio.</p>
+          <ul>
+            <li>Kotlin, Jetpack Compose, Coroutines and Multiplatform</li>
+            <li>Content-focused mobile UX with a modern visual layer</li>
+            <li>Useful counterbalance to utility, telecom and systems-heavy projects</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=com.happyf365.everyday" target="_blank" rel="noreferrer">Google Play</a>
+          </div>
+        </article>
+
+        <article class="panel project">
+          <small>Healthcare / Android</small>
+          <div class="project-media shot" style="--bg-image: url('./assets/odt-images/10000000000000B9000001904A2F58F6.png');"><div class="frame"></div></div>
+          <h3>IVF Russia</h3>
+          <p>Mobile support app for women preparing for pregnancy, including IVF. Built with a modern Kotlin-first stack and delivered end-to-end.</p>
+          <ul>
+            <li>100% Kotlin, MVVM, Hilt, Coroutines, Jetpack Navigation</li>
+            <li>Firebase Authentication, Firestore, Realtime Database, Storage, Messaging and Analytics</li>
+            <li>Room database, Coil, MotionLayout and full UI and feature implementation</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=com.ivfrussia" target="_blank" rel="noreferrer">Google Play</a>
+          </div>
+        </article>
+
+        <article class="panel project">
+          <small>Mobility / Android</small>
+          <div class="project-media shot" style="--bg-image: url('./assets/odt-images/10000000000000E8000001904B2A642B.png');"><div class="frame"></div></div>
+          <h3>Bambilla Ride Sharing</h3>
+          <p>Ride-sharing application for users acting as both passengers and drivers, with strong focus on legacy refactoring and product delivery.</p>
+          <ul>
+            <li>Java, MVP, Dagger 2, RxJava 2, Retrofit 2, OkHttp 3, Socket.io</li>
+            <li>Social sign-in, Crashlytics, Firebase analytics and material redesign</li>
+            <li>Code review, refactoring, backend collaboration, QA and team leadership responsibilities</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=club.bambilla.release" target="_blank" rel="noreferrer">Google Play</a>
+          </div>
+        </article>
+
+        <article class="panel project">
+          <small>Game / Android</small>
+          <div class="project-media shot" style="--bg-image: url('./assets/odt-images/10000000000000E100000190D0B6EEF0.png');"><div class="frame"></div></div>
+          <h3>Crocodile (Charades)</h3>
+          <p>Casual family game client for charades with online phrase generation, offline fallback data and analytics.</p>
+          <ul>
+            <li>Java, RxJava 2, Retrofit 2, OkHttp 3, Firebase analytics and Crashlytics</li>
+            <li>Main developer and QA tester</li>
+            <li>Built-in local phrase database for temporary offline operation and auto translation support</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=crocodile.s0l.com.crocodile" target="_blank" rel="noreferrer">Google Play</a>
+          </div>
+        </article>
+
+        <article class="panel project">
+          <small>Social Aggregation / Android</small>
+          <div class="project-media poster">
+            <div class="poster-grid"></div>
+            <div class="poster-orb"></div>
+            <div class="poster-chip">Aggregator</div>
+          </div>
+          <h3>Social Aggregator</h3>
+          <p>Personal-use app that unified feeds and interactions from several social networks into a single mobile interface.</p>
+          <ul>
+            <li>Java, AsyncTask, REST API integration and JSON parsing</li>
+            <li>Facebook, Instagram, Twitter, LiveJournal, Odnoklassniki and VK aggregation</li>
+            <li>OAuth, unified news feed, contacts, media viewing, search, events and messages</li>
+          </ul>
+        </article>
+
+        <article class="panel project">
+          <small>Monitoring / Android</small>
+          <div class="project-media shot" style="--bg-image: url('./assets/odt-images/1nm.png');"><div class="frame"></div></div>
+          <h3>NetMon Radio Network Monitor</h3>
+          <p>Network monitoring utility for cellular, Wi-Fi and Bluetooth environments with map visualization and export capabilities.</p>
+          <ul>
+            <li>Telephony, GPS, Bluetooth and Wi-Fi APIs with SQLite storage</li>
+            <li>Google Maps, Yandex Maps, OpenStreetMap, AndroidPlot and GraphView</li>
+            <li>Real-time event capture, signal tracking and export to KML, CSV, Excel and HTML</li>
+          </ul>
+        </article>
+
+        <article class="panel project">
+          <small>Visualization / Android</small>
+          <div class="project-media shot" style="--bg-image: url('./assets/odt-images/1tp_result.png');"><div class="frame"></div></div>
+          <h3>Pulse of Tweets DayDream</h3>
+          <p>Ambient Android DayDream visualization displaying geolocated tweets from around the world in near real time.</p>
+          <ul>
+            <li>Java and DayDream implementation</li>
+            <li>Focused on data-driven visual presentation of live public activity</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=com.s0l.tweetpulse" target="_blank" rel="noreferrer">Google Play</a>
+          </div>
+        </article>
+
+        <article class="panel project">
+          <small>Visualization / Android</small>
+          <div class="project-media shot" style="--bg-image: url('./assets/odt-images/1eq_1_result.png');"><div class="frame"></div></div>
+          <h3>Equations DayDream</h3>
+          <p>Experimental DayDream app based on generative motion equations, extended with notification-driven visual states.</p>
+          <ul>
+            <li>Java and DayDream</li>
+            <li>Unread Gmail, unread SMS and missed call notification display</li>
+            <li>Based on Justin Windle's "Equations for organic motion"</li>
+          </ul>
+        </article>
+
+        <article class="panel project">
+          <small>Scientific Software / Windows</small>
+          <div class="project-media shot" style="--bg-image: url('./assets/odt-images/1east_main.PNG');"><div class="frame"></div></div>
+          <h3>EAST-2003</h3>
+          <p>Desktop software for seismic hazard analysis and mapping, based on OSR-97 algorithms and adapted into a Windows application.</p>
+          <ul>
+            <li>MS Visual Studio C/C++, MFC, GDI+</li>
+            <li>Migration of scientific algorithms from Fortran (MS-DOS) to C/C++</li>
+            <li>Interactive data preparation, zoning calculations and visualization of regional seismicity</li>
+          </ul>
+          <div class="project-links">
+            <a href="http://seismos-u.ifz.ru/personal/electr-earth.htm" target="_blank" rel="noreferrer">Reference</a>
+          </div>
+        </article>
+
+        <article class="panel project">
+          <small>Education Hardware / Windows</small>
+          <div class="project-media shot" style="--bg-image: url('./assets/odt-images/1arm1_result.png');"><div class="frame"></div></div>
+          <h3>ARMEKS</h3>
+          <p>Set of applications for laboratory work in electrical engineering and signal processing, including remote execution workflows.</p>
+          <ul>
+            <li>MS Visual Studio C/C++, Assembler migration, MFC and hardware debugging</li>
+            <li>Signal synthesis, graph visualization and DAC-ADC converter control</li>
+            <li>Remote laboratory execution through scripted task submission and FIFO processing</li>
+          </ul>
+          <div class="project-links">
+            <a href="http://efir.sfu-kras.ru/" target="_blank" rel="noreferrer">Reference</a>
+          </div>
+        </article>
+
+        <article class="panel project">
+          <small>Operations / Windows</small>
+          <div class="project-media shot" style="--bg-image: url('./assets/odt-images/1taximain_result.png');"><div class="frame"></div></div>
+          <h3>Project TAXI</h3>
+          <p>Integrated taxi dispatch and accounting software used by operating companies in Krasnoyarsk in the early 2000s.</p>
+          <ul>
+            <li>MS Visual Studio C/C++, MFC, GDI+ and client/server architecture</li>
+            <li>Orders, customer tracking, blacklist, billing, reporting and driver workload management</li>
+            <li>Successfully used at scale with 500+ cars and 15+ dispatchers</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <p class="footer-note">
+      Additional background includes telecom consulting, network analysis, workflow automation and long-term experience in complex technical environments.
+    </p>
+  </div>
+</body>
+</html>
