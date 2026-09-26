@@ -7,6 +7,8 @@
   <meta name="description" content="Portfolio of Alex Ivantsov: AI-first product engineering, Android development, workflow automation, public GitHub projects and selected systems work.">
   <meta name="keywords" content="Alex Ivantsov, Aleksei Ivantsov, AI engineer, AI-first engineer, AI-first product engineering, AI developer, AI portfolio, machine learning portfolio, computer vision engineer, agentic workflows, AI workflows, GitHub portfolio, Android developer, Kotlin developer, Jetpack Compose, Kotlin Multiplatform, KMP developer, Koin, Ktor, workflow automation, product engineering, software engineer portfolio, public GitHub projects, AIFace, copilot agentic workflows">
   <meta name="author" content="Alex Ivantsov">
+  <link rel="canonical" href="https://abivan-tech.github.io/">
+  <link rel="alternate" type="text/markdown" href="https://abivan-tech.github.io/index.md">
   <meta property="og:title" content="Alex Ivantsov | AI-First Product Engineering Portfolio">
   <meta property="og:description" content="AI-first portfolio of Alex Ivantsov featuring public GitHub AI projects, Android product development, workflow automation and engineering depth.">
   <meta property="og:type" content="website">
@@ -497,6 +499,12 @@
       overflow: hidden;
     }
 
+    .project-media.poster.ffisher {
+      background:
+        linear-gradient(0deg, rgba(4, 7, 13, 0.72), rgba(4, 7, 13, 0.04) 68%),
+        url('./assets/ffisher-developer-profile-header.jpg') center 54% / cover no-repeat;
+    }
+
     .project-media.poster::before {
       background:
         linear-gradient(180deg, rgba(255,255,255,0.05), transparent 26%),
@@ -970,6 +978,22 @@
         </article>
 
         <article class="panel project">
+          <small>Fishing / Android</small>
+          <div class="project-media poster ffisher">
+          </div>
+          <h3>FFisher</h3>
+          <p>A fishing companion for checking local conditions and planning when and where to fish.</p>
+          <ul>
+            <li>Fishing forecasts informed by Finnish weather and water data</li>
+            <li>Map-based exploration of nearby fishing conditions</li>
+            <li>Android app built with Kotlin Multiplatform</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=fi.s0l.ffisher.android" target="_blank" rel="noreferrer">Google Play</a>
+          </div>
+        </article>
+
+        <article class="panel project">
           <small>Streaming / Android TV</small>
           <div class="project-media shot" style="--bg-image: url('./assets/odt-images/10000000000002D0000005A0E63ED6AE.png');"><div class="frame"></div></div>
           <h3>TV d'Orange</h3>
@@ -1183,6 +1207,9 @@
 
     <p class="footer-note">
       Additional background includes telecom consulting, network analysis, workflow automation and long-term experience in complex technical environments.
+    </p>
+    <p class="footer-note">
+      <a href="/index.md">Markdown profile</a> · <a href="/llms.txt">AI-readable site index</a>
     </p>
   </div>
 </body>
