@@ -1,0 +1,29 @@
+# Alex Ivantsov — Portfolio Index
+
+This site is the portfolio of Alex Ivantsov, a Lead Android engineer in Tampere, Finland, focused on Kotlin, Jetpack Compose, Kotlin Multiplatform, AI-enabled mobile products, AI Ambassador, and engineering leadership.
+
+## Primary pages
+
+- [Portfolio homepage](https://abivan-tech.github.io/): visual overview, experience summary, technical skills, and selected projects.
+- [Markdown profile](https://abivan-tech.github.io/index.md): text-first profile, selected experience, projects, and technical skills.
+- [Sitemap](https://abivan-tech.github.io/sitemap.xml): canonical public site URLs.
+
+## Projects
+
+- [FFisher on Google Play](https://play.google.com/store/apps/details?id=fi.s0l.ffisher.android): fishing maps and forecasts for Android.
+- [AIFace on GitHub](https://github.com/ABIvan-Tech/AIFace): multimodal camera and AI project.
+- [Copilot Agentic Workflows on GitHub](https://github.com/ABIvan-Tech/copilot-agentic-workflows): agentic development workflows.
+- [OpenCode Agentic Workflows on GitHub](https://github.com/ABIvan-Tech/opencode-agentic-workflows): orchestration, planning, review, and verification workflows.
+
+## Professional profile
+
+- [GitHub profile](https://github.com/ABIvan-Tech/)
+- [LinkedIn profile](https://www.linkedin.com/in/alekseiivantsov/)
+
+## Expertise
+
+AI and LLM integration; AI-enabled mobile products; AI Ambassador, and engineering leadership.
+
+Android and Kotlin engineering; Jetpack Compose; Kotlin Multiplatform; modular and offline-first architecture; mobile performance; CI/CD and testing; BLE and NFC; telecom engineering and technical leadership.
+
+The site is a personal portfolio. It does not expose a public API, OAuth service, or MCP server.
